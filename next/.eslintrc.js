@@ -46,6 +46,7 @@ module.exports = {
         /* SPICES & HERBS */
         'react/require-default-props': 0,
         'jsx-quotes': ['error', 'prefer-single'],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
     
         'jsx-a11y/no-noninteractive-element-interactions': 0,
         'jsx-a11y/no-static-element-interactions': 0,
