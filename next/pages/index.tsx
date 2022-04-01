@@ -4,22 +4,22 @@ export default function HomePage() {
 	return (
 		<>
 			<Title sx={{fontSize: 100, fontWeight: 900, letterSpacing: -2}} align='center' mt={100}>
-        Welcome to{' '}
+				Welcome to{' '}
 				<Text inherit variant='gradient' component='span'>
-          Mantine
+					Mantine
 				</Text>
 			</Title>
 			<Text color='dimmed' align='center' size='lg' sx={{maxWidth: 580}} mx='auto' mt='xl'>
-        This starter Next.js projects includes a minimal setup for server side rendering, if you
-        want to learn more on Mantine + Next.js integration follow{' '}
+				This starter Next.js projects includes a minimal setup for server side rendering, if you
+				want to learn more on Mantine + Next.js integration follow{' '}
 				<Anchor href='https://mantine.dev/theming/next/' size='lg'>
-          this guide
+					this guide
 				</Anchor>
-        . To get started edit index.tsx file.
+				. To get started edit index.tsx file.
 			</Text>
 			<Container mt='xl'>
 				<Timeline active={1} bulletSize={24} lineWidth={2}>
-					<Timeline.Item  title='New branch'>
+					<Timeline.Item title='New branch'>
 						<Text color='dimmed' size='sm'>You&apos;ve created new branch <Text variant='link' component='span' inherit>fix-notifications</Text> from master</Text>
 						<Text size='xs' style={{marginTop: 4}}>2 hours ago</Text>
 					</Timeline.Item>
@@ -34,23 +34,23 @@ export default function HomePage() {
 						<Text size='xs' style={{marginTop: 4}}>34 minutes ago</Text>
 					</Timeline.Item>
 
-					<Timeline.Item title='Code review' >
+					<Timeline.Item title='Code review'>
 						<Text color='dimmed' size='sm'><Text variant='link' component='span' inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
 						<Text size='xs' style={{marginTop: 4}}>12 minutes ago</Text>
 					</Timeline.Item>
 				</Timeline>
 				<Stepper active={1} breakpoint='sm' mt='xl'>
-					<Stepper.Step label='Fist step' description='Create an account' >
-          Step 1 content: Create an account
+					<Stepper.Step label='Fist step' description='Create an account'>
+						Step 1 content: Create an account
 					</Stepper.Step>
-					<Stepper.Step label='Second step' description='Verify email' loading >
-          Step 2 content: Verify email
+					<Stepper.Step label='Second step' description='Verify email' loading>
+						Step 2 content: Verify email
 					</Stepper.Step>
-					<Stepper.Step label='Final step' description='Get full access' >
-          Step 3 content: Get full access
+					<Stepper.Step label='Final step' description='Get full access'>
+						Step 3 content: Get full access
 					</Stepper.Step>
 					<Stepper.Completed>
-          Completed, click back button to get to previous step
+						Completed, click back button to get to previous step
 					</Stepper.Completed>
 				</Stepper>
 			</Container>
