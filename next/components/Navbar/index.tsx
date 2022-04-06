@@ -6,7 +6,7 @@ export default function Navbar() {
 		<HeaderMiddle
 			links={[
 				{label: 'Home', link: '/'},
-				{label: 'MOMHI', link: '/t'},
+				{label: '?', link: '/example-cow-page'},
 			]}
 			cta={(
 				<>
