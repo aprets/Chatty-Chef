@@ -3,7 +3,7 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
-export interface IPagesExampleCowPageFields {
+export interface IExampleCowPageTypeFields {
   /** Content Item Title */
   contentItemTitle: string;
 
@@ -17,8 +17,7 @@ export interface IPagesExampleCowPageFields {
   picture: Asset;
 }
 
-export interface IPagesExampleCowPage
-  extends Entry<IPagesExampleCowPageFields> {
+export interface IExampleCowPageType extends Entry<IExampleCowPageTypeFields> {
   sys: {
     id: string;
     type: string;
@@ -27,7 +26,7 @@ export interface IPagesExampleCowPage
     locale: string;
     contentType: {
       sys: {
-        id: "pages-example-cow-page";
+        id: "exampleCowPageType";
         linkType: "ContentType";
         type: "Link";
       };
@@ -35,7 +34,7 @@ export interface IPagesExampleCowPage
   };
 }
 
-export type CONTENT_TYPE = "pages-example-cow-page";
+export type CONTENT_TYPE = "exampleCowPageType";
 
 export type LOCALE_CODE = "en-US";
 
