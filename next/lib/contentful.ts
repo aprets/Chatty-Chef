@@ -15,9 +15,9 @@ const previewClientOptions = { // Preview mode
 
 const client = createClient(isDev ? previewClientOptions : productionClientOptions)
 
-export async function getPageDataById(id:string) {
+export async function getPageDataById<FieldsType>(id:string) {
 	try {
-		return await client.getEntry(id)
+		return await client.getEntry<FieldsType>(id)
 	} catch (error) {
 		if (error.message === 'The resource could not be found.') {
 			throw new Error(
