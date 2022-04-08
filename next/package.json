@@ -12,16 +12,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^1.8.3",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@mantine/core": "^4.1.1",
     "@mantine/dates": "^4.1.1",
     "@mantine/hooks": "^4.1.1",
     "@mantine/next": "^4.1.1",
     "@mantine/notifications": "^4.1.1",
     "@mantine/prism": "^4.1.1",
-    "next": "12.0.7",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.3",
+    "@react-icons/all-files": "^4.1.0",
+    "chat-ui-react": "^0.3.0",
+    "next": "^12.1.4",
     "prism-react-renderer": "^1.2.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react": "^18.0.0",
+    "react-chat-engine": "^1.11.22",
+    "react-chat-popup": "^1.1.2",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
+    "react-modal": "^3.14.4",
+    "stream-chat": "^6.4.0",
+    "stream-chat-react": "^8.0.0"
   },
   "devDependencies": {
     "@mantine/eslint-config": "3.6.7",
