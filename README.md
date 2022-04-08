@@ -20,7 +20,7 @@ To keep things organised, we have a folder for each service:
 
 [`next`](/next/) for any website work
 
-- Go to the [structure section of Next JS](/next/README.md#🏗️-structure) to find out how our `next` app is structured.
+- Go to the [structure section of Next JS](/next/README.md#%EF%B8%8F-structure) to find out how our `next` app is structured.
 
 # 📝 Committing
 
