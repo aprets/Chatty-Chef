@@ -1,0 +1,38 @@
+name: (PROD) Build Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - next/**
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./next
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ${{ github.workspace }}/next/node_modules
+            ${{ github.workspace }}/next/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.[jt]sx?') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+      - run: yarn install 
+      - run: yarn export 
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: website-build-${{github.sha}}
+          path: next/out/*
