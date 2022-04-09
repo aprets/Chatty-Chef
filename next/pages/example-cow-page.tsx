@@ -4,14 +4,13 @@ import {GetStaticProps} from 'next'
 import {getPageDataById} from '../lib/contentful'
 import {IExampleCowPageTypeFields} from '../lib/types/generated/contentful'
 
-export default function CMSTest({data}: {data: IExampleCowPageTypeFields}) {
+export default function ExampleCowPage({data}: {data: IExampleCowPageTypeFields}) {
 	return (
 		<Container>
 			<Title order={1}>{data.mainTitle}</Title>
 			<Text dangerouslySetInnerHTML={{__html: documentToHtmlString(data.mainTopText)}} />
 			<Image radius='md' src={data.picture.fields.file.url} alt={data.picture.fields.title} />
 		</Container>
-
 	)
 }
 
