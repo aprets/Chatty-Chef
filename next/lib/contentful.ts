@@ -17,7 +17,7 @@ const client = createClient(isDev ? previewClientOptions : productionClientOptio
 
 export async function getPageDataById<FieldsType>(id:string) {
 	try {
-		return await client.getEntry<FieldsType>(id)
+		return await client.getEntry<FieldsType>(id, {include: 3})
 	} catch (error) {
 		if (error.message === 'The resource could not be found.') {
 			throw new Error(
