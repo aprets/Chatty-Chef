@@ -47,7 +47,7 @@ export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 					</>
 				))}
 			</Container>
-			<pre>{JSON.stringify(data, null, 4)}</pre>
+			{/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
 		</>
 	)
 }
