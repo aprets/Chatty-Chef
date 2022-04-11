@@ -1,4 +1,4 @@
-name: (DEV) Build Website
+name: (DEV) Deploy Website
 
 on:
   push:
@@ -31,8 +31,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - run: yarn install 
       - run: yarn export 
-      - name: Upload build
-        uses: actions/upload-artifact@v3
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          name: website-build-${{github.sha}}
-          path: next/out/*
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHATTY_CHEF }}'
+          channelId: live
+          projectId: chatty-chef
+

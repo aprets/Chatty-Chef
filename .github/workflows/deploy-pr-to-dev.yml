@@ -1,12 +1,11 @@
-name: (PROD) Build Website
+name: (DEV PR) Deploy PR Website Version
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
+      - dev
     paths:
       - next/**
-  workflow_dispatch:
 
 jobs:
   job:
@@ -31,8 +30,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - run: yarn install 
       - run: yarn export 
-      - name: Upload build
-        uses: actions/upload-artifact@v3
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          name: website-build-${{github.sha}}
-          path: next/out/*
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHATTY_CHEF }}'
+          projectId: chatty-chef
+
+
