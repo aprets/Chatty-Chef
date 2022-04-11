@@ -10,7 +10,7 @@ export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 
 			<Image src={data.headerPicture.fields.file.url} alt={data.headerPicture.fields.title} height='15vh' />
 			<SectionNavbar sectionNames={data.menuSections.filter((s) => s.fields).map((s) => s.fields.title)} />
-			<Container size='xl' mt={10}>
+			<Container size='xl' my={20}>
 
 				{data.menuSections.filter((s) => s.fields).map(({fields: sectionData}) => (
 					<>
