@@ -1,10 +1,16 @@
 import {Container, Text, Image, Title, SimpleGrid, Box} from '@mantine/core'
 import {GetStaticProps} from 'next'
+import React from 'react'
 import {getPageDataById} from '../lib/contentful'
 import {IMenuPageTypeFields} from '../lib/types/generated/contentful'
 import {MenuItem, OffsetDiv, SectionNavbar} from '../components/Menu'
 
 export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
+	const camelToTitleCase = (camelCase) => camelCase
+		.replace(/([A-Z])/g, (match) => ` ${match}`)
+		.replace(/^./, (match) => match.toUpperCase())
+		.trim()
+
 	return (
 		<>
 
@@ -12,8 +18,8 @@ export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 			<SectionNavbar sectionNames={data.menuSections.filter((s) => s.fields).map((s) => s.fields.title)} />
 			<Container size='xl' my={20}>
 
-				{data.menuSections.filter((s) => s.fields).map(({fields: sectionData}) => (
-					<>
+				{data.menuSections.filter((s) => s.fields).map(({sys: {id: sectionId}, fields: sectionData}) => (
+					<React.Fragment key={sectionId}>
 						<Box my={20}>
 							<OffsetDiv id={`section-${sectionData.title}`} />
 							<Title order={2}>{sectionData.title}</Title>
@@ -30,21 +36,21 @@ export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 						>
 							{
 								sectionData.items.filter((i) => i.fields).map(({
-									sys,
+									sys: {id: itemId},
 									fields: {name, price, description, picture},
 									metadata: {tags},
 								}) => (
 									<MenuItem
-										key={sys.id}
+										key={itemId}
 										{...{name, price, description}}
-										pictureUrl={picture.fields?.file?.url}
-										pictureAlt={picture.fields?.title}
-										tags={tags.map((t) => t.sys.id.slice(7))}
+										pictureUrl={picture?.fields?.file?.url}
+										pictureAlt={picture?.fields?.title}
+										tags={tags.map((t) => camelToTitleCase(t.sys.id.slice(7)))}
 									/>
 								))
 							}
 						</SimpleGrid>
-					</>
+					</React.Fragment>
 				))}
 			</Container>
 			{/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
