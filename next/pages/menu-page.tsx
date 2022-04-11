@@ -38,9 +38,8 @@ export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 								// <Grid.Col md={5} lg={4} key={sys.id}>
 								<MenuItem
 									{...{name, price, calories, description}}
-									pictureUrl={picture.fields.file.url}
-									pictureAlt={picture.fields.title}
-								/>
+										pictureUrl={picture.fields?.file?.url}
+										pictureAlt={picture.fields?.title}
 								// </Grid.Col>
 							))
 						}
