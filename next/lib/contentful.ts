@@ -1,6 +1,6 @@
 import {createClient} from 'contentful'
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development' && !process.env.FORCE_CMS_PROD
 
 const productionClientOptions = { // Production mode
 	space: process.env.CONTENTFUL_SPACE_ID,
