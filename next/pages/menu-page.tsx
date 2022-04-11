@@ -31,12 +31,12 @@ export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 							{
 								sectionData.items.filter((i) => i.fields).map(({
 									sys,
-									fields: {name, price, calories, description, picture},
+									fields: {name, price, description, picture},
 									metadata: {tags},
 								}) => (
 									<MenuItem
 										key={sys.id}
-										{...{name, price, calories, description}}
+										{...{name, price, description}}
 										pictureUrl={picture.fields?.file?.url}
 										pictureAlt={picture.fields?.title}
 										tags={tags.map((t) => t.sys.id.slice(7))}

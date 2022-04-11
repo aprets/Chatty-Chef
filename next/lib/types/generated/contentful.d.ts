@@ -44,9 +44,6 @@ export interface IMenuItemTypeFields {
   /** Price */
   price: number;
 
-  /** Calories */
-  calories: number;
-
   /** Picture */
   picture?: Asset | undefined;
 }
