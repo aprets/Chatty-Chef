@@ -4,6 +4,8 @@ import {MantineProvider} from '@mantine/core'
 import Navbar from '../components/Navbar'
 import {theme} from '../lib/theme'
 
+import '../global.css'
+
 export default function App(props: AppProps) {
 	const {Component, pageProps} = props
 
