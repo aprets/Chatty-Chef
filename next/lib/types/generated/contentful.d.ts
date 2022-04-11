@@ -81,7 +81,7 @@ export interface IMenuPageTypeFields {
   headerPicture: Asset;
 
   /** Menu Sections */
-  menuSections: IMenuSection[];
+  menuSections: IMenuSectionType[];
 }
 
 /** Content-type for the menu page */
@@ -103,7 +103,7 @@ export interface IMenuPageType extends Entry<IMenuPageTypeFields> {
   };
 }
 
-export interface IMenuSectionFields {
+export interface IMenuSectionTypeFields {
   /** Title */
   title: string;
 
@@ -116,7 +116,7 @@ export interface IMenuSectionFields {
 
 /** Content-type for a section on menu, must have a title and list of food */
 
-export interface IMenuSection extends Entry<IMenuSectionFields> {
+export interface IMenuSectionType extends Entry<IMenuSectionTypeFields> {
   sys: {
     id: string;
     type: string;
@@ -125,7 +125,7 @@ export interface IMenuSection extends Entry<IMenuSectionFields> {
     locale: string;
     contentType: {
       sys: {
-        id: "menuSection";
+        id: "menuSectionType";
         linkType: "ContentType";
         type: "Link";
       };
@@ -137,7 +137,7 @@ export type CONTENT_TYPE =
   | "exampleCowPageType"
   | "menuItemType"
   | "menuPageType"
-  | "menuSection";
+  | "menuSectionType";
 
 export type LOCALE_CODE = "en-US";
 
