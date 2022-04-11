@@ -10,15 +10,9 @@ export default function Navbar() {
 				{label: 'Menu', link: '/menu-page'},
 			]}
 			cta={(
-				<>
-					<Button radius='xl' sx={{height: 30}}>
-						Get early access
-					</Button>
-
-					<Button radius='xl' sx={{height: 30}}>
-						asd
-					</Button>
-				</>
+				<Button radius='xl' sx={{height: 30}}>
+					Help me choose!
+				</Button>
 			)}
 		/>
 	)
