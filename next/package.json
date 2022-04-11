@@ -1,6 +1,5 @@
 {
-  "name": "mantine-next-template",
-  "version": "0.1.0",
+  "name": "chatty-chef-website",
   "private": true,
   "scripts": {
     "dev": "next dev",
