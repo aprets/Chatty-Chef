@@ -2,7 +2,7 @@ import {Container, Text, Image, Title, SimpleGrid, Stack, Tabs} from '@mantine/c
 import {GetStaticProps} from 'next'
 import {getPageDataById} from '../lib/contentful'
 import {IMenuPageTypeFields} from '../lib/types/generated/contentful'
-import {MenuItem} from '../components/Menu'
+import {MenuItem, OffsetDiv, SectionNavbar} from '../components/Menu'
 
 export default function MenuPage({data}: {data: IMenuPageTypeFields}) {
 	const tabNames = data.menuSections.map((s) => s.fields.title)
