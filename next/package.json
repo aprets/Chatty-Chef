@@ -20,7 +20,7 @@
     "@mantine/next": "^4.1.1",
     "@mantine/notifications": "^4.1.1",
     "@mantine/prism": "^4.1.1",
-    "contentful": "^10.0.0-beta-v10.3",
+    "contentful": "^9.1.19",
     "next": "12.1.0",
     "prism-react-renderer": "^1.2.1",
     "react": "17.0.2",
