@@ -107,6 +107,9 @@ export interface IMenuSectionTypeFields {
   /** Title */
   title: string;
 
+  /** Virtual Tag Name */
+  virtualTagName: string;
+
   /** Description */
   description?: string | undefined;
 
