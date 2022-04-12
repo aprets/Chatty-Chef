@@ -1,5 +1,16 @@
 # 👨‍🍳 Chatty Chefs Website 🍳
 
+### 🚀 Deployments
+The latest builds of the website are deployed at:
+
+Production build (main branch) - https://chatty-chef.web.app/
+
+Dev build (dev branch) - https://chatty-chef--dev-v7895wai.web.app/
+
+PR builds - Check PR comments for deployed version for that PR
+
+The latest menu dataset JSON generated dynamically from the CMS: https://europe-west2-chatty-chef.cloudfunctions.net/menu
+
 # 👩‍💻 Getting Started with development
 
 Clone the repository (`git clone https://github.com/gentleseal/COM3014-CW.git`)

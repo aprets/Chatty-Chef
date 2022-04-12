@@ -22,6 +22,8 @@ Dev build (dev branch) - https://chatty-chef--dev-v7895wai.web.app/
 
 PR builds - Check PR comments for deployed version for that PR
 
+The latest menu dataset JSON generated dynamically from the CMS: https://europe-west2-chatty-chef.cloudfunctions.net/menu
+
 # 📁 Folder Structure
 To keep things organised, we have a folder for each service:
 
