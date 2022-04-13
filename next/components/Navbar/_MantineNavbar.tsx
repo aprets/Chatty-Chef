@@ -1,5 +1,4 @@
-import {useState} from 'react'
-import {createStyles, Header, Group, Stack, Container, Burger, Button} from '@mantine/core'
+import {createStyles, Header, Group, Stack, Container, Burger} from '@mantine/core'
 import {useBooleanToggle} from '@mantine/hooks'
 import Link from 'next/link'
 import {MantineLogo} from './MantineLogo'
@@ -82,39 +81,31 @@ export function HeaderMiddle({links, cta}: HeaderMiddleProps) {
 	))
 
 	return (
-		<Header height={56} mb={120}>
-			<Container className={classes.inner}>
-				<Burger
-					opened={opened}
-					onClick={() => toggleOpened()}
-					size='sm'
-					className={classes.burger}
-				/>
-				<Group className={classes.links} spacing={5}>
-					{items}
-				</Group>
+		<>
+			<Header height={56}>
+				<Container className={classes.inner}>
+					<Burger
+						opened={opened}
+						onClick={() => toggleOpened()}
+						size='sm'
+						className={classes.burger}
+					/>
+					<Group className={classes.links} spacing={5}>
+						{items}
+					</Group>
 
-				<MantineLogo />
+					<MantineLogo />
 
-				<Group spacing={16} className={classes.social} position='right' noWrap>
-					{/* <ActionIcon size='lg'>
-						<BrandTwitter size={18} />
-					</ActionIcon>
-					<ActionIcon size='lg'>
-						<BrandYoutube size={18} />
-					</ActionIcon>
-					<ActionIcon size='lg'>
-						<BrandInstagram size={18} />
-					</ActionIcon> */}
-
-					{cta}
-				</Group>
-			</Container>
+					<Group spacing={16} className={classes.social} position='right' noWrap>
+						{cta}
+					</Group>
+				</Container>
+			</Header>
 			{opened && (
 				<Stack p='xs'>
 					{items}
 				</Stack>
 			)}
-		</Header>
+		</>
 	)
 }

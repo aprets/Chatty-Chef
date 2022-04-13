@@ -21,6 +21,29 @@ Don't forget to install dependencies with `yarn` or `yarn install`
 
 You can now run the next dev server with `yarn dev` and do stuff!
 
+## Commands
+There are some useful commands (found inside `package.json`) that you can run to help you with development.
+
+### `yarn gentypes`
+Query the CMS content models and automatically generate Typescript types for them. See CMS (Typescript) section for more details.
+
+### `yarn dev`
+Starts a development server. There is hot-reloading (changes apply without refresh) so you can easily view and test the app during dev. 
+
+### `yarn dev:published`
+Starts a development server but with **published (production)** data. Any data that has not been published in our CMS will not be displayed by the app, so please make sure to handle any errors here that can be caused by unpublished content.
+
+### `yarn build`
+Creates a production-ready, optimized build of the website (uses prod data in CMS). Once the app is built, you can use `yarn start` (see below) to use it.
+
+### `yarn start`
+Starts the production server (uses prod data from the CMS **fetched during build**). Please make sure to run `yarn build` first to build the latest version of the app before starting the prod server.
+
+### `yarn export`
+Runs `yarn build` and then creates a static (HTML...) build of the website in the `out` folder. You can view the static pages of the app (e.g. `menu-page.html`) without running a next server here.
+
+### `yarn lint`
+Runs the linter (ESLint) on all of the website code. This will check for any warnings or critical lint suggestions.
 # 🛠️ Next.js
 The website is made with Next.js 🤯.
 
@@ -29,6 +52,7 @@ You can check out [the quite decent official docs](https://nextjs.org/docs/getti
 Since we are building a static website, most pages should have `getStaticProps` to fetch any data.
 
 Again, see [the Next docs for that](https://nextjs.org/docs/basic-features/data-fetching/overview)
+
 # 🤫 Security
 This repo is private, so is assumed reasonably secure.
 

@@ -26,3 +26,4 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - run: yarn install
       - run: yarn lint 
+      - run: yarn typecheck

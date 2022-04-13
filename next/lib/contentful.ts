@@ -1,6 +1,6 @@
 import {createClient} from 'contentful'
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development' && !process.env.FORCE_CMS_PROD
 
 const productionClientOptions = { // Production mode
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -17,7 +17,7 @@ const client = createClient(isDev ? previewClientOptions : productionClientOptio
 
 export async function getPageDataById<FieldsType>(id:string) {
 	try {
-		return await client.getEntry<FieldsType>(id)
+		return await client.getEntry<FieldsType>(id, {include: 3})
 	} catch (error) {
 		if (error.message === 'The resource could not be found.') {
 			throw new Error(
