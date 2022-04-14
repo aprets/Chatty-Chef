@@ -1,5 +1,5 @@
 import {Title, Text, Anchor, Timeline, Container, Stepper} from '@mantine/core'
-import Chatbot from '../Chatbot/Chatbot'
+import Chatbot from '../components/Chatbot/Chatbot'
 
 export default function HomePage() {
 	return (
