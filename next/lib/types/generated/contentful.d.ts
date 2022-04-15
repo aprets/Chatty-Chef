@@ -71,12 +71,6 @@ export interface IMenuPageTypeFields {
   /** Content Item Title */
   contentItemTitle: string;
 
-  /** Main Title */
-  mainTitle: string;
-
-  /** Subtitle */
-  subtitle?: string | undefined;
-
   /** Header Picture */
   headerPicture: Asset;
 
