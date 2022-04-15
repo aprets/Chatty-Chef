@@ -1,4 +1,6 @@
 import {Text, Image, Button, Card, Title, Box} from '@mantine/core'
+import {useStore} from '../../lib/store'
+import {IMenuItemType} from '../../lib/types/generated/contentful'
 
 export interface MenuItemProps {
 	name: string,
@@ -7,9 +9,10 @@ export interface MenuItemProps {
 	pictureUrl?: string,
 	pictureAlt?: string,
 	tags?: string[],
+	onClick?: VoidFunction
 }
 
-export function MenuItem({name, description, price, pictureUrl, pictureAlt, tags}: MenuItemProps) {
+export function RawMenuItem({name, description, price, pictureUrl, pictureAlt, tags, onClick}: MenuItemProps) {
 	return (
 		<Card shadow='sm' withBorder sx={{display: 'flex', flexDirection: 'column'}}>
 			<Card.Section>
@@ -33,9 +36,28 @@ export function MenuItem({name, description, price, pictureUrl, pictureAlt, tags
 			)}
 			<Text mt={10} weight={600}>£{price.toFixed(2)}</Text>
 
-			<Button fullWidth sx={{marginTop: 14}}>
+			<Button fullWidth sx={{marginTop: 14}} onClick={onClick}>
 				Add
 			</Button>
 		</Card>
+	)
+}
+
+const camelToTitleCase = (camelCase) => camelCase
+	.replace(/([A-Z])/g, (match) => ` ${match}`)
+	.replace(/^./, (match) => match.toUpperCase())
+	.trim()
+
+export function MenuItem({item}: {item: IMenuItemType}) {
+	const {name, price, description, picture} = item?.fields ?? {}
+	const addToBasket = useStore((store) => store.addToBasket)
+	return (
+		<RawMenuItem
+			{...{name, price, description}}
+			pictureUrl={picture?.fields?.file?.url}
+			pictureAlt={picture?.fields?.title}
+			tags={item.metadata.tags.map((t) => camelToTitleCase(t.sys.id.slice(7)))}
+			onClick={() => { addToBasket(item.sys.id) }}
+		/>
 	)
 }
