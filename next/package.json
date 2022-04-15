@@ -21,10 +21,12 @@
     "@mantine/notifications": "^4.1.1",
     "@mantine/prism": "^4.1.1",
     "contentful": "^9.1.19",
+    "immutable": "^4.0.0",
     "next": "12.1.0",
     "prism-react-renderer": "^1.2.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "zustand": "^3.7.2"
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^15.12.0",
