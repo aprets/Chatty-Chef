@@ -42,7 +42,7 @@ export function Basket({menu}: {menu: Menu}) {
 					<Text weight={500}>Total</Text>
 					<Text weight={500}>
 						£{basketItems.entrySeq().reduce((acc, [id, count]) => acc + menu.itemsById[id].fields.price * count, 0).toFixed(2)}
-					</Text>+
+					</Text>
 				</Group>
 
 			)}
