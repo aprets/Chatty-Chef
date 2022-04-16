@@ -6,18 +6,13 @@ export default function Navbar() {
 		<HeaderMiddle
 			links={[
 				{label: 'Home', link: '/'},
-				{label: 'MOMHI', link: '/t'},
+				{label: '?', link: '/example-cow-page'},
+				{label: 'Menu', link: '/menu-page'},
 			]}
 			cta={(
-				<>
-					<Button radius='xl' sx={{height: 30}}>
-						Get early access
-					</Button>
-
-					<Button radius='xl' sx={{height: 30}}>
-						asd
-					</Button>
-				</>
+				<Button radius='xl' sx={{height: 30}}>
+					Help me choose!
+				</Button>
 			)}
 		/>
 	)
