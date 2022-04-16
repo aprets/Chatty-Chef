@@ -1,7 +1,7 @@
 import {Button} from '@mantine/core'
 import {HeaderMiddle} from './_MantineNavbar'
 
-export default function Navbar() {
+export default function Navbar({helpMeChooseCallback}: {helpMeChooseCallback: VoidFunction}) {
 	return (
 		<HeaderMiddle
 			links={[
@@ -10,7 +10,7 @@ export default function Navbar() {
 				{label: 'Menu', link: '/menu-page'},
 			]}
 			cta={(
-				<Button radius='xl' sx={{height: 30}}>
+				<Button radius='xl' sx={{height: 30}} onClick={helpMeChooseCallback}>
 					Help me choose!
 				</Button>
 			)}
