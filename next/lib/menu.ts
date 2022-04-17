@@ -26,7 +26,7 @@ async function fetchMenuData() {
 		headerPictureUrl: fieldData.headerPicture?.fields?.file?.url,
 		headerPictureAlt: fieldData.headerPicture?.fields?.title,
 		sections,
-		items,
+		// items,
 		itemsById,
 	}
 }
