@@ -5,7 +5,7 @@ import {StateStorage} from 'zustand/middleware'
 const localStorageItemName = 'chatty-chef'
 
 let reactLoaded = false
-let reactLoadedHook
+let reactLoadedHook = () => {}
 export const storage: StateStorage = {
 	getItem: async (name: string): Promise<string | null> => {
 		const item = localStorage.getItem(name)
@@ -51,6 +51,7 @@ export const useStoreHydrate = () => {
 	if (typeof window !== 'undefined') {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		useLayoutEffect(() => {
+			reactLoaded = true
 			reactLoadedHook()
 		}, [])
 	}
