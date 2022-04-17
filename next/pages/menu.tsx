@@ -13,7 +13,7 @@ export default function MenuPage({menu}: {menu: Menu}) {
 				<Grid>
 					<Grid.Col xs={12} md={8}>
 						{menu.sections.map((section) => (
-							<Section section={section} />
+							<Section key={section.sys.id} section={section} />
 						))}
 					</Grid.Col>
 					<Grid.Col xs={12} md={4}>
