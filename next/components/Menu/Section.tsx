@@ -5,9 +5,9 @@ import {OffsetDiv} from '../OffsetDiv'
 import {MenuItem} from './Item'
 
 export function Section({section}: {section: IMenuSectionType}) {
-	const {sys: {id: sectionId}, fields: sectionData} = section
+	const {fields: sectionData} = section
 	return (
-		<Fragment key={sectionId}>
+		<>
 			<Box my={20}>
 				<OffsetDiv id={`section-${sectionData.title}`} />
 				<Title order={2}>{sectionData.title}</Title>
@@ -29,6 +29,6 @@ export function Section({section}: {section: IMenuSectionType}) {
 				}
 			</SimpleGrid>
 
-		</Fragment>
+		</>
 	)
 }
