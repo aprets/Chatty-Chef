@@ -5,9 +5,12 @@ import Navbar from '../components/Navbar'
 import {theme} from '../lib/theme'
 
 import '../global.css'
+import {useStoreHydrate} from '../lib/store/storage'
 
 export default function App(props: AppProps) {
 	const {Component, pageProps} = props
+
+	useStoreHydrate()
 
 	return (
 		<>
