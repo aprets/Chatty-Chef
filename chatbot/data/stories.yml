@@ -1,0 +1,58 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+  
+- story: food
+  steps:
+  - intent: appetiser
+  - action: utter_appetiser
+
+- story: food1
+  steps:
+  - intent: softdrink
+  - action: utter_appetiser
+  
+- story: food2
+  steps:
+  - intent: recommendation
+  - action: utter_recommendation
+  
+- story: food3
+  steps:
+  - intent: dessert
+  - action: utter_dessert
+
+- story: food4
+  steps:
+  - intent: checkout
+  - action: utter_checkout
+
+
+
