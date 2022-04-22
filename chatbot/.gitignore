@@ -204,8 +204,7 @@ out/
 .vscode/
 tmp_training_data.json
 .DS_Store
-#models/
-#/models/
+
 .mypy_cache/
 *.tar.gz
 secrets.tar
@@ -251,3 +250,6 @@ rasa/keys
 .netlify
 .keras
 .config
+
+!models/
+!/models/*
