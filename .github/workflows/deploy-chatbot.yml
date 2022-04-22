@@ -1,9 +1,9 @@
-name: (DEV) Deploy Chatbot
+name: (PROD) Deploy Chatbot
 
 on:
   push:
-    # branches:
-    #   - dev
+    branches:
+      - main
     paths:
       - chatbot/**
       - .github/workflows/deploy-chatbot.yml
