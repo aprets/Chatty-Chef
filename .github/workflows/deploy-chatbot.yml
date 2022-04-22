@@ -8,7 +8,6 @@ on:
       - chatbot/**
   workflow_dispatch:
 
-name: Build and Deploy a Container
 env:
   PROJECT_ID: chatty-chef
   SERVICE: chatbot
