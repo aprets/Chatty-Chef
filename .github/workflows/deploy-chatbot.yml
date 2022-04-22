@@ -6,6 +6,7 @@ on:
     #   - dev
     paths:
       - chatbot/**
+      - .github/deploy-chatbot.yml
   workflow_dispatch:
 
 env:
