@@ -1,58 +1,30 @@
-import {Title, Text, Anchor, Timeline, Container, Stepper} from '@mantine/core'
+import {Title, Text, Container, Image, BackgroundImage, Button, Box, Group, Footer, List, ListItem} from '@mantine/core'
 
 export default function HomePage() {
 	return (
 		<>
-			<Title sx={{fontSize: 100, fontWeight: 900, letterSpacing: -2}} align='center' mt={100}>
-				Welcome to{' '}
-				<Text inherit variant='gradient' component='span'>
-					Mantine
+			<Box sx={{maxWidth: 2000}}>
+				<BackgroundImage
+					src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/217d384d43552a94d1f27c497d706d1f4d31ab8d3c24160accb7179461bbe3dd._RI_.png'
+				>
+					<Title sx={{fontSize: 100, fontWeight: 900, letterSpacing: -2}} align='center'>
+						Welcome to{' '}
+						<Text sx={{fontSize: 100, fontWeight: 900}} color='orange' component='span'>
+							Chatty Chef
+						</Text>
+					</Title>
+				</BackgroundImage>
+			</Box>
+			<Container>
+				<Title sx={{fontSize: 35, fontWeight: 200}} align='center' mt={10}>
+					A little about us
+				</Title>
+				<Text sx={{fontSize: 18, fontWeight: 100}} align='center'>
+					Our Chefs offer you perfect cooking, best served dishes with fresh ingredients and old recipes.
+					We have only carefully sourced and seasonal ingredients in our disposal to make rustic.
+					Their expert ingredient selection and exquisite cooking techniques result in memorable and craveable meals.
+					We offer numerous items that can be found on our easy-to-access menu.
 				</Text>
-			</Title>
-			<Text color='dimmed' align='center' size='lg' sx={{maxWidth: 580}} mx='auto' mt='xl'>
-				This starter Next.js projects includes a minimal setup for server side rendering, if you
-				want to learn more on Mantine + Next.js integration follow{' '}
-				<Anchor href='https://mantine.dev/theming/next/' size='lg'>
-					this guide
-				</Anchor>
-				. To get started edit index.tsx file.
-			</Text>
-			<Container mt='xl'>
-				<Timeline active={1} bulletSize={24} lineWidth={2}>
-					<Timeline.Item title='New branch'>
-						<Text color='dimmed' size='sm'>You&apos;ve created new branch <Text variant='link' component='span' inherit>fix-notifications</Text> from master</Text>
-						<Text size='xs' style={{marginTop: 4}}>2 hours ago</Text>
-					</Timeline.Item>
-
-					<Timeline.Item title='Commits'>
-						<Text color='dimmed' size='sm'>You&apos;ve pushed 23 commits to <Text variant='link' component='span' inherit>fix-notifications branch</Text></Text>
-						<Text size='xs' style={{marginTop: 4}}>52 minutes ago</Text>
-					</Timeline.Item>
-
-					<Timeline.Item title='Pull request' lineVariant='dashed'>
-						<Text color='dimmed' size='sm'>You&apos;ve submitted a pull request<Text variant='link' component='span' inherit>Fix incorrect notification message (#187)</Text></Text>
-						<Text size='xs' style={{marginTop: 4}}>34 minutes ago</Text>
-					</Timeline.Item>
-
-					<Timeline.Item title='Code review'>
-						<Text color='dimmed' size='sm'><Text variant='link' component='span' inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
-						<Text size='xs' style={{marginTop: 4}}>12 minutes ago</Text>
-					</Timeline.Item>
-				</Timeline>
-				<Stepper active={1} breakpoint='sm' mt='xl'>
-					<Stepper.Step label='Fist step' description='Create an account'>
-						Step 1 content: Create an account
-					</Stepper.Step>
-					<Stepper.Step label='Second step' description='Verify email' loading>
-						Step 2 content: Verify email
-					</Stepper.Step>
-					<Stepper.Step label='Final step' description='Get full access'>
-						Step 3 content: Get full access
-					</Stepper.Step>
-					<Stepper.Completed>
-						Completed, click back button to get to previous step
-					</Stepper.Completed>
-				</Stepper>
 			</Container>
 		</>
 	)
