@@ -1,4 +1,4 @@
-import {Title, Text, Container, BackgroundImage, Box, Image, Group, Button} from '@mantine/core'
+import {Title, Text, Container, BackgroundImage, Box, Image, Group, Button, Footer, List, ListItem} from '@mantine/core'
 
 export default function HomePage() {
 	return (
@@ -102,6 +102,50 @@ export default function HomePage() {
 					and our Chef will reccomend the perfect dishes for you.
 				</Text>
 			</Container>
+			<Footer>
+				<BackgroundImage
+					sx={{height: 300}}
+					src='https://t4.ftcdn.net/jpg/04/18/75/65/360_F_418756555_8rIk7lbPvAlRErWmPMeMHqilhCHzYLWW.jpg'
+				>
+					<Title align='center' sx={{fontSize: 30, fontWeight: 400}}>
+						Join our Kitchen!
+					</Title>
+					<List mt={40}>
+						<Title align='center' sx={{fontSize: 30, fontWeight: 200}}>Please find links to our other pages below </Title>
+
+						<ListItem
+							sx={{fontSize: 18, fontWeight: 100}}
+							mb={10}
+							ml={900}
+							component='a'
+							href='/menu-page'
+						>
+							Menu
+						</ListItem>
+						<br />
+						<ListItem
+							sx={{fontSize: 18, fontWeight: 100}}
+							mb={10}
+							ml={900}
+							component='a'
+							href='/about-us-page'
+						>
+							About us
+						</ListItem>
+					</List>
+					<Title align='center' mt={10} sx={{fontSize: 30, fontWeight: 200}}>We are Hiring!! </Title>
+					<Title align='center' sx={{fontSize: 20, fontWeight: 200}}>If you're interested feel free to contact us below </Title>
+					<Text
+						align='center'
+						mb={10}
+						ml={850}
+						component='a'
+						href='/about-us-page'
+					>
+						the-chatty-chefs@outlook.com
+					</Text>
+				</BackgroundImage>
+			</Footer>
 		</>
 	)
 }
