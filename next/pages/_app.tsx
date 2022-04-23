@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import {theme} from '../lib/theme'
 
 import '../global.css'
+import {useStoreHydrate} from '../lib/store/storage'
 
 import ChatBotPopup from '../components/Chatbot'
 
@@ -13,6 +14,7 @@ export default function App(props: AppProps) {
 	const {Component, pageProps} = props
 
 	const [chatbotPopupOpened, setChatbotPopupOpened] = useState(false)
+	useStoreHydrate()
 
 	return (
 		<>

@@ -1,0 +1,70 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - appetiser
+  - softdrink
+  - recommendation
+  - dessert
+  - spicy
+  - pizza
+  - burger
+  - halal
+  - checkout
+
+responses:
+  utter_greet:
+  - text: "Hey! Welcome to the Chattychef World. How can i assist you today ?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Thank You! It was great chatting with you."
+
+  utter_iamabot:
+  - text: "I am chattychef, here to help you for your food!."
+  
+  utter_appetiser:
+  - text: "we have below options in appetiser to choose from: 1. Buffalo Wings price: 3.99 2. Crispy Chicken Strips price: 4.5 3. Chicken Nuggets price: 6.99 4. Garlic Bread price: 2.99."
+  
+  utter_softdrinks:
+  - text: "we do have softdrink and juices with us. options : Apple Juice price: 3.95 2.Coca-Cola Can price:1.95 3.Diet Coke Can price:1.95 4.Sprite Can: 1.95."
+  
+  utter_recommendation:
+  - text: "Chattychef have too many good options to choose from. I can recommend you as below:   NON_VEG: Piri Piri Chicken Salad, Lamb doner, Chicken Shish      VEG: Green Salad, Regular fries, Onion Rings       Dessert: Strawberry & Chocolate Waffle, Mixed Ice Cream       Drinks: Banana Milkshake, Belgian Chocolate Milkshake.       If you further want to select from our menu, here is the link: (https://europe-west2-chatty-chef.cloudfunctions.net/menu)"
+  
+  utter_dessert:
+  - text: "ChattChef do have speciality in Dessert. We do have a lot of options from in-house baked cakes to different flavoured icecreams to choose from. Here are few current recommnedations: 1. Strawberry & Chocolate Waffle Price:5.95, 2. Mixed Ice-cream Price: 4.95."
+
+  utter_spicy:
+  - text: "We do have a lot options in spicy food as-well, spcially chicken. If you really want to try something spicy, try our Piri Piri Chicken Wings. Sizzling wings in special Piri Piri sauce is our most popular dish. Other than that you can try Classic Chicken Burger or Mixed Grill : A bit of chicken and a bit of lamb, kebab"
+  
+  utter_pizza:
+  - text: "we have different range of pizza from Margherita Pizza to BBQ Chicken Pizza. BBQ pizza fresh off the grill, bbq sauce fresh off the freezer is a timeless combination."
+
+  utter_burger:
+  - text: "If you want to have spicy burger, try our Flaming Chicken Burger. Chattychef will recommmend you to also try our Classic Beef Burger."
+
+  utter_halal:
+  - text: "We have many options in halal chicken and others. You can try halal chicken donner or combo burger with a combination of beef and chicken."
+
+  utter_checkout:
+  - text: "Thank You! It was great chatting with you. For checkout, you can directly do it from your basket. Link for the basket is: (https://europe-west2-chatty-chef.cloudfunctions.net/menu)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
