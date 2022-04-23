@@ -1,4 +1,4 @@
-import {Title, Text, Container, Image, BackgroundImage, Button, Box, Group, Footer, List, ListItem} from '@mantine/core'
+import {Title, Text, Container, BackgroundImage, Box} from '@mantine/core'
 
 export default function HomePage() {
 	return (
