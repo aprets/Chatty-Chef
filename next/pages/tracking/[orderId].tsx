@@ -41,7 +41,7 @@ export default function Tracking() {
 			</Center>
 		)
 	}
-	// return <p>Order: {JSON.stringify(orderId)}</p>
+
 	return (
 		<Container size='xl'>
 			<Card shadow='sm' p='lg' mt='xl' withBorder>
