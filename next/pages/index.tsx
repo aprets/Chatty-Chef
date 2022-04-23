@@ -115,7 +115,7 @@ export default function HomePage() {
 						Join our Kitchen!
 					</Title>
 					<List mt={40}>
-						<Title align='center' sx={{fontSize: 30, fontWeight: 200}}>Please find links to our other pages below </Title
+						<Title align='center' sx={{fontSize: 30, fontWeight: 200}}>Please find links to our other pages below </Title>
 						<ListItem
 							sx={{fontSize: 18, fontWeight: 100}}
 							mb={10}
