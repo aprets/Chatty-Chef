@@ -54,5 +54,25 @@ stories:
   - intent: checkout
   - action: utter_checkout
 
+- story: food5
+  steps:
+  - intent: spicy
+  - action: utter_spicy
+
+- story: food6
+  steps:
+  - intent: pizza
+  - action: utter_pizza
+
+- story: food6
+  steps:
+  - intent: burger
+  - action: utter_burger
+
+- story: food7
+  steps:
+  - intent: halal
+  - action: utter_halal
+
 
 

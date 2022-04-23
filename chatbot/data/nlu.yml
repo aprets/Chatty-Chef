@@ -127,6 +127,32 @@ nlu:
     - anything sweet to eat
     - post-dinner suggestion please
     - i want to eat sweets today
+
+- intent: spicy
+  examples: |
+    - do you have anything spicy
+    - i am craving for something spicy today
+    - something with spice in it ?
+
+- intent: pizza
+  examples: |
+    - what kind of pizza do you have?
+    - I want to try pizza today, options please.
+    - I am hoping for having pizza today in dinner
+    - Pizza, please ?
+
+- intent: burger
+  examples: |
+    - what kind of burgers you serve
+    - i am thinking of having something small like burger
+    - burgers
+
+- intent: halal
+  examples: |
+    - Do you serve halal chicken?
+    - Do you have halal dishes ?
+    - halal chciken ?
+    - halal options please.
     
 - intent: checkout
   examples: |
