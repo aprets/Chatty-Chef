@@ -1,4 +1,5 @@
-import {Title, Text, Container, BackgroundImage, Box, Image, Group, Button, Footer, List, ListItem} from '@mantine/core'
+import {Title, Text, Container, BackgroundImage, Box, Image, Group, Button, List, ListItem, Center} from '@mantine/core'
+import {NextLink} from '@mantine/next'
 
 export default function HomePage() {
 	return (
@@ -26,12 +27,13 @@ export default function HomePage() {
 					We offer numerous items that can be found on our easy-to-access menu.
 				</Text>
 			</Container>
-			<Image
-				align='center'
-				width={300}
-				height={100}
-				src='https://cdn.pixabay.com/photo/2018/02/19/20/28/abstract-3166168__340.png'
-			/>
+			<Center>
+				<Image
+					width={300}
+					height={100}
+					src='https://cdn.pixabay.com/photo/2018/02/19/20/28/abstract-3166168__340.png'
+				/>
+			</Center>
 			<Container>
 				<Title sx={{fontSize: 35, fontWeight: 200}} align='center' mt={10} mb={10}>
 					Feel free to take a look at our Menu
@@ -76,33 +78,35 @@ export default function HomePage() {
 					Click here to see our menu!
 				</Button>
 			</Container>
-			<Image
-				align='center'
-				height={30}
-				src='https://imgprd19.hobbylobby.com/c/ff/aa/cffaafaf122ca61c02d560db086a1ff41ef92ca9/1400Wx1400H-171017-a-0521-PX.jpg'
-			/>
+			<Center>
+				<Image
+					height={30}
+					src='https://imgprd19.hobbylobby.com/c/ff/aa/cffaafaf122ca61c02d560db086a1ff41ef92ca9/1400Wx1400H-171017-a-0521-PX.jpg'
+				/>
+			</Center>
 			<Container>
 				<Title sx={{fontSize: 35, fontWeight: 200}} align='center' mt={10}>
 					Welcome our new virtual Chef
 				</Title>
-				<Text sx={{fontSize: 18}} align='center' weight={500}>
-					Our new virtual Chef is here! He's waiting for you at the bottom right, ready to take your order.
+				<Text sx={{fontSize: 18, textAlign: 'center'}} weight={500}>
+					Our new virtual Chef is here! He&apos;s waiting for you at the bottom right, ready to take your order.
 				</Text>
-				<Image
-					mb={5}
-					align='center'
-					width={100}
-					height={100}
-					src='https://www.logopik.com/wp-content/uploads/edd/2018/07/Chef-Logo-Vector-Download.png'
-				/>
-				<Text sx={{fontSize: 18, fontWeight: 100}} align='center' mb={15}>
+				<Center>
+					<Image
+						mb={5}
+						width={100}
+						height={100}
+						src='https://www.logopik.com/wp-content/uploads/edd/2018/07/Chef-Logo-Vector-Download.png'
+					/>
+				</Center>
+				<Text sx={{fontSize: 18, fontWeight: 100, textAlign: 'center'}} mb={15}>
 					If you are not sure what you want, FEAR NOT, our Chef can recommend you dishes to fit your needs.
 					You only need to tell him what kind of food you feel like eating, (eg. chicken, beef, etc)
-					or how you'd like your food (eg. spicy, sweet, etc.)
+					or how you&apos;d like your food (eg. spicy, sweet, etc.)
 					and our Chef will reccomend the perfect dishes for you.
 				</Text>
 			</Container>
-			<Footer>
+			<Box>
 				<BackgroundImage
 					sx={{height: 300}}
 					src='https://t4.ftcdn.net/jpg/04/18/75/65/360_F_418756555_8rIk7lbPvAlRErWmPMeMHqilhCHzYLWW.jpg'
@@ -117,24 +121,22 @@ export default function HomePage() {
 							sx={{fontSize: 18, fontWeight: 100}}
 							mb={10}
 							ml={900}
-							component='a'
-							href='/menu-page'
 						>
-							Menu
+							<NextLink href='/menu'>Menu</NextLink>
+
 						</ListItem>
 						<br />
 						<ListItem
 							sx={{fontSize: 18, fontWeight: 100}}
 							mb={10}
 							ml={900}
-							component='a'
-							href='/about-us-page'
 						>
-							About us
+							<NextLink href='/about-us'>About us</NextLink>
+
 						</ListItem>
 					</List>
 					<Title align='center' mt={10} sx={{fontSize: 30, fontWeight: 200}}>We are Hiring!! </Title>
-					<Title align='center' sx={{fontSize: 20, fontWeight: 200}}>If you're interested feel free to contact us below </Title>
+					<Title align='center' sx={{fontSize: 20, fontWeight: 200}}>If you&apos;re interested feel free to contact us below </Title>
 					<Text
 						align='center'
 						mb={10}
@@ -145,7 +147,7 @@ export default function HomePage() {
 						the-chatty-chefs@outlook.com
 					</Text>
 				</BackgroundImage>
-			</Footer>
+			</Box>
 		</>
 	)
 }
