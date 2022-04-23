@@ -2,6 +2,12 @@ import {Button, Card, Group, Title, Text} from '@mantine/core'
 import {Menu} from '../../lib/menu'
 import {useStore} from '../../lib/store'
 
+interface Product {
+	name: string,
+	price: number,
+	quantity: number,
+}
+
 export function Basket({menu}: {menu: Menu}) {
 	const basketItems = useStore((store) => store.basketItems)
 	const addToBasket = useStore((store) => store.addToBasket)
@@ -47,7 +53,30 @@ export function Basket({menu}: {menu: Menu}) {
 
 			)}
 
-			<Button fullWidth mt={14} disabled={basketItems.isEmpty()}>
+			<Button
+				fullWidth
+				mt={14}
+				disabled={basketItems.isEmpty()}
+				onClick={async () => {
+					const products: Product[] = basketItems.entrySeq().toArray().map(([id, count]) => {
+						const item = menu.itemsById[id]
+						return {
+							name: item.fields.name,
+							price: item.fields.price,
+							quantity: count,
+						}
+					})
+					const response = await fetch(process.env.NEXT_PUBLIC_CHECKOUT_URL, {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(products),
+					})
+					clearBasket()
+					window.location.href = await response.text()
+				}}
+			>
 				Checkout
 			</Button>
 		</Card>

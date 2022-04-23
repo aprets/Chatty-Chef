@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import {theme} from '../lib/theme'
 
 import '../global.css'
+import '../lib/firebase'
 import {useStoreHydrate} from '../lib/store/storage'
 
 import ChatBotPopup from '../components/Chatbot'
