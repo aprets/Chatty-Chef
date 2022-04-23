@@ -76,6 +76,32 @@ export default function HomePage() {
 					Click here to see our menu!
 				</Button>
 			</Container>
+			<Image
+				align='center'
+				height={30}
+				src='https://imgprd19.hobbylobby.com/c/ff/aa/cffaafaf122ca61c02d560db086a1ff41ef92ca9/1400Wx1400H-171017-a-0521-PX.jpg'
+			/>
+			<Container>
+				<Title sx={{fontSize: 35, fontWeight: 200}} align='center' mt={10}>
+					Welcome our new virtual Chef
+				</Title>
+				<Text sx={{fontSize: 18}} align='center' weight={500}>
+					Our new virtual Chef is here! He's waiting for you at the bottom right, ready to take your order.
+				</Text>
+				<Image
+					mb={5}
+					align='center'
+					width={100}
+					height={100}
+					src='https://www.logopik.com/wp-content/uploads/edd/2018/07/Chef-Logo-Vector-Download.png'
+				/>
+				<Text sx={{fontSize: 18, fontWeight: 100}} align='center' mb={15}>
+					If you are not sure what you want, FEAR NOT, our Chef can recommend you dishes to fit your needs.
+					You only need to tell him what kind of food you feel like eating, (eg. chicken, beef, etc)
+					or how you'd like your food (eg. spicy, sweet, etc.)
+					and our Chef will reccomend the perfect dishes for you.
+				</Text>
+			</Container>
 		</>
 	)
 }
