@@ -1,4 +1,4 @@
-import {Title, Text, Container, BackgroundImage, Box} from '@mantine/core'
+import {Title, Text, Container, BackgroundImage, Box, Image} from '@mantine/core'
 
 export default function HomePage() {
 	return (
@@ -24,6 +24,21 @@ export default function HomePage() {
 					We have only carefully sourced and seasonal ingredients in our disposal to make rustic.
 					Their expert ingredient selection and exquisite cooking techniques result in memorable and craveable meals.
 					We offer numerous items that can be found on our easy-to-access menu.
+				</Text>
+			</Container>
+			<Image
+				align='center'
+				width={300}
+				height={100}
+				src='https://cdn.pixabay.com/photo/2018/02/19/20/28/abstract-3166168__340.png'
+			/>
+			<Container>
+				<Title sx={{fontSize: 35, fontWeight: 200}} align='center' mt={10} mb={10}>
+					Feel free to take a look at our Menu
+				</Title>
+				<Text sx={{fontSize: 18, fontWeight: 200}} align='center' mb={20}>
+					Our menu consists of 45 deliouciously prepared dishes,
+					including mouthwatering burgers, flavourful pizzas, enchanting milkshakes and much more.
 				</Text>
 			</Container>
 		</>
