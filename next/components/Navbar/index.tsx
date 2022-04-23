@@ -7,7 +7,7 @@ export default function Navbar() {
 			links={[
 				{label: 'Home', link: '/'},
 				{label: '?', link: '/example-cow-page'},
-				{label: 'Menu', link: '/menu-page'},
+				{label: 'Menu', link: '/menu'},
 			]}
 			cta={(
 				<Button radius='xl' sx={{height: 30}}>

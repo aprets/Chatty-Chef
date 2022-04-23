@@ -1,3 +1,4 @@
 .eslintrc.js
+next.config.js
 getContentfulEnvironment.js
 lib/types/generated/*
