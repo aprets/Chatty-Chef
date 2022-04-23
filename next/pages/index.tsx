@@ -1,4 +1,5 @@
 import {Title, Text, Anchor, Timeline, Container, Stepper} from '@mantine/core'
+
 export default function HomePage() {
 	return (
 		<>
