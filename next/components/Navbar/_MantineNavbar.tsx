@@ -1,7 +1,6 @@
-import {createStyles, Header, Group, Stack, Container, Burger} from '@mantine/core'
+import {createStyles, Header, Group, Stack, Container, Burger, Text} from '@mantine/core'
 import {useBooleanToggle} from '@mantine/hooks'
 import Link from 'next/link'
-import {MantineLogo} from './MantineLogo'
 
 const useStyles = createStyles((theme) => ({
 	inner: {
@@ -94,7 +93,15 @@ export function HeaderMiddle({links, cta}: HeaderMiddleProps) {
 						{items}
 					</Group>
 
-					<MantineLogo />
+					<Text>
+						<Text sx={{fontSize: 30, fontWeight: 900}} color='gray' component='span'>
+							Chatty
+						</Text>
+						{' '}
+						<Text sx={{fontSize: 30, fontWeight: 900}} color='orange' component='span'>
+							Chef
+						</Text>
+					</Text>
 
 					<Group spacing={16} className={classes.social} position='right' noWrap>
 						{cta}
