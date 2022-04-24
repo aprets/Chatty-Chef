@@ -4,7 +4,7 @@ import {NextLink} from '@mantine/next'
 export default function HomePage() {
 	return (
 		<>
-			<Box sx={{maxWidth: 2000}}>
+			<Box>
 				<BackgroundImage
 					src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/217d384d43552a94d1f27c497d706d1f4d31ab8d3c24160accb7179461bbe3dd._RI_.png'
 				>
