@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 nlu:
 - intent: greet
@@ -92,6 +92,25 @@ nlu:
     - am I talking to a human?
     
 
+- intent: hours
+  examples: |
+    - are you open
+    - do you have food
+    - what are your hours?
+    - when are you open
+    - do you deliver?
+
+- intent: recommendation
+  examples: |
+    - please suggest something new to eat.
+    - i want to try something new today
+    - do you reccomend anything?
+    - whats chef's dish
+    - i want to order some food
+    - food
+    - order
+    - feed me
+
 - intent: appetiser
   examples: |
     - what do you have in appetiser?
@@ -104,23 +123,17 @@ nlu:
     - I want to eat something in snacks?
     - I want to eat something in starter?
     
-- intent: softdrink
+- intent: drink
   examples: |
     - i want to drink something.
-    - anything in softdrink.
+    - anything in drinks.
     - drink options please.
     - light drinks.
     - soft drinks
     - juice options please
     - do you have juice here
     
-- intent: recommendation
-  examples: |
-    - please suggest something new to eat.
-    - i want to try something new today
-    - something to eat in non-veg
-    - any vegetarian food to eat.
-    
+
 - intent: dessert
   examples: |
     - what you have in dessert
@@ -147,11 +160,19 @@ nlu:
     - i am thinking of having something small like burger
     - burgers
 
+- intent: chicken
+  examples: |
+    - do you have any chicken?
+    - something chicken
+    - chicken
+    - maybe some chicken
+    - i want to have chicken
+
 - intent: halal
   examples: |
     - Do you serve halal chicken?
     - Do you have halal dishes ?
-    - halal chciken ?
+    - halal chicken ?
     - halal options please.
     
 - intent: checkout
