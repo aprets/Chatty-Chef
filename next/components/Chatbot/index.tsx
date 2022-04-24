@@ -1,4 +1,4 @@
-import {FaJenkins} from 'react-icons/fa'
+import {SiCodechef} from 'react-icons/si'
 import {Affix, Button} from '@mantine/core'
 import ChatBotWindow from './ChatBotWindow'
 
@@ -13,9 +13,10 @@ export default function ChatBotPopup(
 				) : (
 					<Button
 						radius='xl'
-						size='md'
+						size='xl'
 						onClick={() => setOpened((o) => !o)}
-					><FaJenkins style={{color: 'black'}} />
+					>
+						<SiCodechef color='black' size='40' />
 					</Button>
 				) }
 			</Affix>

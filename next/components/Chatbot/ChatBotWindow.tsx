@@ -4,11 +4,10 @@ import {Box, Button, Card, Text, Title, Group} from '@mantine/core'
 import {BotMessage, UserMessage} from './Message'
 import Input from './Input'
 
-import Api from './api'
-
 interface Message {
 	sender: 'user' | 'bot',
-	text: string,
+	text?: string,
+	picture?: string,
 }
 
 export default function ChatBotWindow({close}: {close: VoidFunction}) {
@@ -21,8 +20,23 @@ export default function ChatBotWindow({close}: {close: VoidFunction}) {
 	const send = async (text) => {
 		setMessages((messagesState) => [...messagesState, {sender: 'user', text}])
 		setIsLoading(true)
-		const botResponse = await Api.GetChatbotResponse(text)
-		setMessages((messagesState) => [...messagesState, {sender: 'bot', text: botResponse as string}])
+		const rawBotResponse = await fetch(process.env.NEXT_PUBLIC_CHATBOT_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				sender: 'bob',
+				message: text,
+			}),
+		})
+		const botResponse = await rawBotResponse.json()
+		const botMessages = botResponse.map((botMessage) => ({
+			sender: 'bot',
+			text: botMessage.text,
+			image: botMessage.image,
+		}))
+		setMessages((messagesState) => [...messagesState, ...botMessages])
 		setIsLoading(false)
 	}
 
@@ -59,11 +73,11 @@ export default function ChatBotWindow({close}: {close: VoidFunction}) {
 					{messages.map((message) => {
 						const MessageComponent = message.sender === 'bot' ? BotMessage : UserMessage
 						return (
-							<MessageComponent>{message.text}</MessageComponent>
+							<MessageComponent text={message.text} image={message.image} />
 						)
 					})}
 					{isLoading && (
-						<BotMessage>...</BotMessage>
+						<BotMessage text='...' />
 					)}
 				</Box>
 				<Input onSend={send} />

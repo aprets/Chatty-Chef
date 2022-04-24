@@ -1,4 +1,4 @@
-import {Group, Text, Sx} from '@mantine/core'
+import {Group, Text, Sx, Image} from '@mantine/core'
 
 interface MessageProps {
 	children: React.ReactNode,
@@ -10,7 +10,6 @@ function Message({children, align, sx}: MessageProps) {
 	return (
 		<Group position={align}>
 			<Text
-				// color='white'
 				p={15}
 				mx={15}
 				mb={10}
@@ -22,22 +21,28 @@ function Message({children, align, sx}: MessageProps) {
 	)
 }
 
-export function UserMessage({children}: {children: string}) {
+export function UserMessage({text}: {text: string}) {
 	return (
 		<Message
 			align='right'
 			sx={(theme) => ({backgroundColor: theme.colors.orange[2]})}
-		>{children}
+		>
+			{text}
 		</Message>
 	)
 }
 
-export function BotMessage({children}: {children: string}) {
+export function BotMessage({text, image}: {text?: string, image?: string}) {
 	return (
 		<Message
 			align='left'
 			sx={(theme) => ({backgroundColor: theme.colors.orange[4]})}
-		>{children}
+		>
+			{image ? (
+				<Image src={image} />
+			) : (
+				text
+			)}
 		</Message>
 	)
 }
