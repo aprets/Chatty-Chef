@@ -94,7 +94,7 @@ export const checkout = regionalHttps.onRequest(async (request, response) => {
 				quantity: product.quantity,
 			})),
 			mode: 'payment',
-			success_url: 'https://chatty-chef.web.app/tracking/{CHECKOUT_SESSION_ID}',
+			success_url: 'https://chatty-chef.web.app/tracking?order={CHECKOUT_SESSION_ID}',
 			cancel_url: 'https://chatty-chef.web.app/menu',
 		})
 

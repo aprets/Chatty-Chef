@@ -7,7 +7,7 @@ import {GrNotes} from 'react-icons/gr'
 import {GiCook, GiDeliveryDrone} from 'react-icons/gi'
 import {IoFastFoodSharp} from 'react-icons/io5'
 import {ReactNode} from 'react'
-import {Order} from '../../lib/types/ordering'
+import {Order} from '../lib/types/ordering'
 
 function StatusText({children}: {children: ReactNode}) {
 	return (
@@ -21,7 +21,7 @@ function StatusText({children}: {children: ReactNode}) {
 
 export default function Tracking() {
 	const router = useRouter()
-	const {orderId} = router.query
+	const orderId = router.query?.order
 	const db = getFirestore()
 	const [untypedOrder, loading, error] = useDocumentData(doc(db, 'orders', (orderId ?? 'undefined').toString()))
 	const order = untypedOrder as Order
