@@ -1,4 +1,8 @@
 import {Text, Image, Button, Card, Title, Box} from '@mantine/core'
+import {NextLink} from '@mantine/next'
+import {showNotification} from '@mantine/notifications'
+import {useRouter} from 'next/router'
+import {AiOutlineExclamation} from 'react-icons/ai'
 import {useStore} from '../../lib/store'
 import {IMenuItemType} from '../../lib/types/generated/contentful'
 
@@ -9,12 +13,13 @@ export interface MenuItemProps {
 	pictureUrl?: string,
 	pictureAlt?: string,
 	tags?: string[],
+	flat: boolean,
 	onClick?: VoidFunction
 }
 
-export function RawMenuItem({name, description, price, pictureUrl, pictureAlt, tags, onClick}: MenuItemProps) {
+export function RawMenuItem({name, description, price, pictureUrl, pictureAlt, tags, flat, onClick}: MenuItemProps) {
 	return (
-		<Card shadow='sm' withBorder sx={{display: 'flex', flexDirection: 'column'}}>
+		<Card shadow='sm' withBorder={!flat} sx={{display: 'flex', flexDirection: 'column'}}>
 			<Card.Section>
 				<Image src={pictureUrl} alt={pictureAlt} />
 			</Card.Section>
@@ -48,16 +53,28 @@ const camelToTitleCase = (camelCase) => camelCase
 	.replace(/^./, (match) => match.toUpperCase())
 	.trim()
 
-export function MenuItem({item}: {item: IMenuItemType}) {
+export function MenuItem({item, flat}: {item: IMenuItemType, flat: boolean}) {
 	const {name, price, description, picture} = item?.fields ?? {}
+	const {pathname} = useRouter()
+	const isMenu = pathname === '/menu'
 	const addToBasket = useStore((store) => store.addToBasket)
+	const addItem = (id: string) => {
+		if (!isMenu) {
+			showNotification({
+				icon: <AiOutlineExclamation />,
+				message: <Text>We added {name} to your basket. <NextLink href='/menu'>Click here to view it on the menu page.</NextLink></Text>,
+			})
+		}
+		addToBasket(id)
+	}
 	return (
 		<RawMenuItem
 			{...{name, price, description}}
 			pictureUrl={picture?.fields?.file?.url}
 			pictureAlt={picture?.fields?.title}
 			tags={item.metadata.tags.map((t) => camelToTitleCase(t.sys.id.slice(7)))}
-			onClick={() => { addToBasket(item.sys.id) }}
+			flat={flat}
+			onClick={() => { addItem(item.sys.id) }}
 		/>
 	)
 }
