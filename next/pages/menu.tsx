@@ -1,9 +1,9 @@
 import {GetStaticProps} from 'next'
 import {Container, Image, Grid} from '@mantine/core'
 import {Basket, Section, SectionNavbar} from '../components/Menu'
-import getMenu, {Menu} from '../lib/menu'
+import menu, {Menu} from '../lib/menu.preval'
 
-export default function MenuPage({menu}: {menu: Menu}) {
+export default function MenuPage() {
 	return (
 		<>
 
@@ -17,7 +17,7 @@ export default function MenuPage({menu}: {menu: Menu}) {
 						))}
 					</Grid.Col>
 					<Grid.Col xs={12} md={4}>
-						<Basket menu={menu} />
+						<Basket />
 					</Grid.Col>
 				</Grid>
 
@@ -25,9 +25,3 @@ export default function MenuPage({menu}: {menu: Menu}) {
 		</>
 	)
 }
-
-export const getStaticProps: GetStaticProps = async () => ({
-	props: {
-		menu: await getMenu(),
-	},
-})

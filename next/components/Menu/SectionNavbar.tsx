@@ -1,8 +1,13 @@
 import {Paper, Group, Button} from '@mantine/core'
 import {useMediaQuery} from '@mantine/hooks'
+import {useEffect, useMemo, useState} from 'react'
 
 export function SectionNavbar({sectionNames}: {sectionNames: string[]}) {
-	const isTouch = useMediaQuery('(pointer: coarse)')
+	const touchMediaQuery = useMediaQuery('(pointer: coarse)')
+	const [isTouch, setIsTouch] = useState(false)
+	useEffect(() => {
+		setIsTouch(touchMediaQuery)
+	}, [touchMediaQuery])
 	return (
 		<Paper shadow='sm' radius={0} sx={{position: 'sticky', top: 0, zIndex: 1}}>
 			<Group
