@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import {useState} from 'react'
 
-import {Box, Button, Card, Text, Title, Group, Loader} from '@mantine/core'
+import {Box, Button, Card, Title, Group, Loader} from '@mantine/core'
 import {BotMessage, UserMessage} from './Message'
 import Input from './Input'
 import {useStore} from '../../lib/store'

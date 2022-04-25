@@ -53,7 +53,7 @@ const camelToTitleCase = (camelCase) => camelCase
 	.replace(/^./, (match) => match.toUpperCase())
 	.trim()
 
-export function MenuItem({item, flat}: {item: IMenuItemType, flat: boolean}) {
+export function MenuItem({item, flat}: {item: IMenuItemType, flat?: boolean}) {
 	const {name, price, description, picture} = item?.fields ?? {}
 	const {pathname} = useRouter()
 	const isMenu = pathname === '/menu'

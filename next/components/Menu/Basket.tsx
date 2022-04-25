@@ -1,5 +1,5 @@
 import {Button, Card, Group, Title, Text} from '@mantine/core'
-import menu, {Menu} from '../../lib/menu.preval'
+import menu from '../../lib/menu.preval'
 import {useStore} from '../../lib/store'
 
 interface Product {

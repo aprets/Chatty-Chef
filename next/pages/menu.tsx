@@ -1,7 +1,6 @@
-import {GetStaticProps} from 'next'
 import {Container, Image, Grid} from '@mantine/core'
 import {Basket, Section, SectionNavbar} from '../components/Menu'
-import menu, {Menu} from '../lib/menu.preval'
+import menu from '../lib/menu.preval'
 
 export default function MenuPage() {
 	return (

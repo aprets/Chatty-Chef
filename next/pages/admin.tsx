@@ -1,4 +1,4 @@
-import {Affix, Box, Button, Card, Center, Container, Grid, Group, Input, SimpleGrid, Text, Title, Badge, Divider} from '@mantine/core'
+import {Affix, Button, Card, Container, Grid, Group, Input, SimpleGrid, Text, Title, Badge} from '@mantine/core'
 import {useEffect, useRef, useState} from 'react'
 import {getAuth, signInWithEmailAndPassword, signOut, User} from 'firebase/auth'
 import {showNotification} from '@mantine/notifications'

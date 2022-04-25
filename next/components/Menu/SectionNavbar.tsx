@@ -1,6 +1,6 @@
 import {Paper, Group, Button} from '@mantine/core'
 import {useMediaQuery} from '@mantine/hooks'
-import {useEffect, useMemo, useState} from 'react'
+import {useEffect, useState} from 'react'
 
 export function SectionNavbar({sectionNames}: {sectionNames: string[]}) {
 	const touchMediaQuery = useMediaQuery('(pointer: coarse)')

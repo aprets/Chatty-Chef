@@ -1,5 +1,5 @@
 import {SiCodechef} from 'react-icons/si'
-import {Affix, Button} from '@mantine/core'
+import {Affix, Box, Button} from '@mantine/core'
 import {useRouter} from 'next/router'
 import ChatBotWindow from './ChatBotWindow'
 
@@ -23,6 +23,6 @@ export default function ChatBotPopup(
 					</Button>
 				)}
 			</Affix>
-		) : false
+		) : <Box />
 	)
 }
