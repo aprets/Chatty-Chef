@@ -1,5 +1,5 @@
 import {Button, Card, Group, Title, Text} from '@mantine/core'
-import {Menu} from '../../lib/menu'
+import menu from '../../lib/menu.preval'
 import {useStore} from '../../lib/store'
 
 interface Product {
@@ -8,7 +8,7 @@ interface Product {
 	quantity: number,
 }
 
-export function Basket({menu}: {menu: Menu}) {
+export function Basket() {
 	const basketItems = useStore((store) => store.basketItems)
 	const addToBasket = useStore((store) => store.addToBasket)
 	const removeFromBasket = useStore((store) => store.removeFromBasket)
@@ -17,7 +17,7 @@ export function Basket({menu}: {menu: Menu}) {
 		<Card shadow='sm' p='lg' sx={{position: 'sticky', top: 80, zIndex: 1}}>
 			<Group position='apart' mb={16}>
 				<Title order={3}>Basket</Title>
-				<Button radius='xl' compact onClick={clearBasket}>×</Button>
+				<Button radius='xl' compact disabled={basketItems.isEmpty()} onClick={clearBasket}>×</Button>
 			</Group>
 			{basketItems.entrySeq().map(([id, count]) => (
 				<Group position='apart' key={id} mb={8}>

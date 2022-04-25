@@ -6,12 +6,12 @@ export default function Navbar({helpMeChooseCallback}: {helpMeChooseCallback: Vo
 		<HeaderMiddle
 			links={[
 				{label: 'Home', link: '/'},
-				{label: '?', link: '/example-cow-page'},
 				{label: 'Menu', link: '/menu'},
+				{label: 'About Us', link: '/about-us'},
 			]}
 			cta={(
 				<Button radius='xl' sx={{height: 30}} onClick={helpMeChooseCallback}>
-					Help me choose!
+					Help me!
 				</Button>
 			)}
 		/>

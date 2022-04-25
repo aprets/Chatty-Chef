@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {TextInput, Box, Group, Button, Grid} from '@mantine/core'
+import {TextInput, Box, Button, Grid} from '@mantine/core'
 
 import {IoMdSend} from 'react-icons/io'
 
