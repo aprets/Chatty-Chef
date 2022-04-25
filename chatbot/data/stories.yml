@@ -41,6 +41,11 @@ stories:
     - intent: hours
     - action: utter_hours
 
+- story: checkout
+  steps:
+    - intent: checkout
+    - action: utter_checkout
+
 
 - story: greet and recommend
   steps:

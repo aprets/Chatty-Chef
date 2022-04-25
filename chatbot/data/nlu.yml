@@ -104,7 +104,8 @@ nlu:
   examples: |
     - please suggest something new to eat.
     - i want to try something new today
-    - do you reccomend anything?
+    - do you have any recommendations?
+    - do you recommend anything?
     - whats chef's dish
     - i want to order some food
     - food
