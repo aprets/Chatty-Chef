@@ -35,6 +35,6 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHATTY_CHEF }}'
-          channelId: live
+          channelId: dev
           projectId: chatty-chef
 
