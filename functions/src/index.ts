@@ -2,19 +2,13 @@ import {region} from 'firebase-functions'
 import {createClient as createContentfulClient} from 'contentful'
 import {IMenuPageTypeFields} from './contentful'
 import Stripe from 'stripe'
-import {initializeApp as firebaseInitializeApp} from 'firebase-admin'
+import {initializeApp} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 import Cors from 'cors'
 const corsHandler = Cors({origin: true})
 
 
-let app
-const initializeFirebase = () => {
-	if (!app) {
-		app = firebaseInitializeApp()
-	}
-	return app
-}
+initializeApp()
 
 const regionalHttps = region('europe-west2').https
 
@@ -104,7 +98,6 @@ export const checkout = regionalHttps.onRequest(async (request, response) => {
 			cancel_url: 'https://chatty-chef.web.app/menu',
 		})
 
-		initializeFirebase()
 		const db = getFirestore()
 
 		db.collection('orders').doc(session.id).set({
@@ -144,7 +137,6 @@ export const orderHook = regionalHttps.onRequest(async (request, response) => {
 	const session: Stripe.Checkout.Session = event.data.object
 	const lineItems = (await stripe.checkout.sessions.listLineItems(event.data.object.id)).data
 
-	initializeFirebase()
 	const db = getFirestore()
 
 	const order: Order = {
