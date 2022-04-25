@@ -2,6 +2,7 @@ import {AppProps} from 'next/app'
 import Head from 'next/head'
 import {MantineProvider} from '@mantine/core'
 import {useState} from 'react'
+import {NotificationsProvider} from '@mantine/notifications'
 import Navbar from '../components/Navbar'
 import {theme} from '../lib/theme'
 
@@ -29,9 +30,11 @@ export default function App(props: AppProps) {
 				withNormalizeCSS
 				theme={theme}
 			>
-				<Navbar helpMeChooseCallback={() => { setChatbotPopupOpened(true) }} />
-				<Component {...pageProps} />
-				<ChatBotPopup isOpened={chatbotPopupOpened} setOpened={setChatbotPopupOpened} />
+				<NotificationsProvider position='bottom-left'>
+					<Navbar helpMeChooseCallback={() => { setChatbotPopupOpened(true) }} />
+					<Component {...pageProps} />
+					<ChatBotPopup isOpened={chatbotPopupOpened} setOpened={setChatbotPopupOpened} />
+				</NotificationsProvider>
 			</MantineProvider>
 		</>
 	)

@@ -1,7 +1,7 @@
 import {Affix, Box, Button, Card, Center, Container, Grid, Group, Input, SimpleGrid, Text, Title, Badge, Divider} from '@mantine/core'
 import {useEffect, useRef, useState} from 'react'
 import {getAuth, signInWithEmailAndPassword, signOut, User} from 'firebase/auth'
-import {NotificationsProvider, showNotification} from '@mantine/notifications'
+import {showNotification} from '@mantine/notifications'
 import {useCollection} from 'react-firebase-hooks/firestore'
 import {collection, doc, getFirestore, query, where, updateDoc, increment} from 'firebase/firestore'
 import {Order} from '../lib/types/ordering'
@@ -14,7 +14,7 @@ const statusMessages = [
 	'Delivered',
 ]
 
-export function Admin() {
+export default function Admin() {
 	const [user, setUser] = useState<User>()
 	const auth = getAuth()
 	useEffect(() => {
@@ -59,7 +59,7 @@ export function Admin() {
 				{orders.map((order) => (
 					<Card shadow='sm' p='lg' mt='xl' withBorder>
 						<Group position='apart'>
-							<Title order={5}>ID: {order.id.slice(60)}</Title>
+							<Title order={5}>{order.id.slice(60).toUpperCase()}</Title>
 							<Badge
 								size='lg'
 								color={
@@ -152,13 +152,5 @@ export function Admin() {
 			)}
 
 		</Container>
-	)
-}
-
-export default function NotificationWrapper() {
-	return (
-		<NotificationsProvider>
-			<Admin />
-		</NotificationsProvider>
 	)
 }
