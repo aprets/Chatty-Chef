@@ -1,10 +1,19 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+const withNextPluginPreval = require('next-plugin-preval/config')();
 
-module.exports = withBundleAnalyzer({
+module.exports = withNextPluginPreval(withBundleAnalyzer({
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
-});
+  webpack: (config, { webpack, buildId, isServer }) => {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.CONFIG_BUILD_ID': JSON.stringify(buildId)
+      })
+    );
+    return config
+  },
+}))

@@ -1,0 +1,78 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hours
+  - recommendation
+  - appetiser
+  - drink
+  - chicken
+  - dessert
+  - spicy
+  - pizza
+  - burger
+  - halal
+  - checkout
+
+responses:
+  utter_greet:
+  - text: "Hey! Welcome to the Chatty Chef. How can i assist you today?"
+
+  utter_hours:
+  - text: "We are currently open! Our hours are 10AM-10PM Tuesday to Sunday."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Thank You! It was great chatting with you."
+
+  utter_iamabot:
+  - text: "I am Chatty Chef, here to help you for your food!"
+  
+  utter_recommendation:
+  - text: "!recommendation"
+  
+  utter_appetiser:
+  - text: "!recommend appetiser"
+  
+  utter_drink:
+  - text: "!recommend drink"
+  
+  utter_dessert:
+  - text: "!recommend dessert"
+
+  utter_spicy:
+  - text: "!recommend spicy"
+
+  utter_pizza:
+  - text: "!recommend pizza"
+
+  utter_burger:
+  - text: "!recommend burger"
+
+  utter_chicken:
+  - text: "!recommend chicken"
+
+  utter_halal:
+  - text: "!recommend halal"
+
+  utter_checkout:
+  - text: "!checkout"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

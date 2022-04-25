@@ -1,0 +1,35 @@
+name: Publish a new version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release'
+        required: true
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    # publish pass is a dependancy
+    steps:
+      - uses: actions/checkout@v2
+      - id: changelog
+        name: Generate conventional changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.github_token }}
+          skip-commit: true
+          skip-version-file: true
+          fallback-version: ${{github.event.inputs.version}}
+      - name: Create release (and tag)
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{github.event.inputs.version}}
+          release_name: Release ${{github.event.inputs.version}}
+          body: |
+            ${{ steps.changelog.outputs.clean_changelog }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,187 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: greet and hours
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: hours
+    - action: utter_hours
+
+- story: hours
+  steps:
+    - intent: hours
+    - action: utter_hours
+
+- story: checkout
+  steps:
+    - intent: checkout
+    - action: utter_checkout
+
+
+- story: greet and recommend
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recommendation
+    - action: utter_recommendation
+    - checkpoint: greet_and_recommend
+
+- story: recommend
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recommendation
+    - action: utter_recommendation
+    - checkpoint: recommend
+
+- story: appetiser
+  steps:
+  - intent: appetiser
+  - action: utter_appetiser
+- story: greet and recommend appetiser 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: appetiser
+  - action: utter_appetiser
+- story: recommend appetiser
+  steps:
+  - checkpoint: recommend
+  - intent: appetiser
+  - action: utter_appetiser
+
+- story: drink
+  steps:
+  - intent: drink
+  - action: utter_drink
+- story: greet and recommend drink 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: drink
+  - action: utter_drink
+- story: recommend drink
+  steps:
+  - checkpoint: recommend
+  - intent: drink
+  - action: utter_drink
+
+- story: dessert
+  steps:
+  - intent: dessert
+  - action: utter_dessert
+- story: greet and recommend dessert 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: dessert
+  - action: utter_dessert
+- story: recommend dessert
+  steps:
+  - checkpoint: recommend
+  - intent: dessert
+  - action: utter_dessert
+
+- story: spicy
+  steps:
+  - intent: spicy
+  - action: utter_spicy
+- story: greet and recommend spicy 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: spicy
+  - action: utter_spicy
+- story: recommend spicy
+  steps:
+  - checkpoint: recommend
+  - intent: spicy
+  - action: utter_spicy
+
+- story: pizza
+  steps:
+  - intent: pizza
+  - action: utter_pizza
+- story: greet and recommend pizza 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: pizza
+  - action: utter_pizza
+- story: recommend pizza
+  steps:
+  - checkpoint: recommend
+  - intent: pizza
+  - action: utter_pizza
+
+- story: burger
+  steps:
+  - intent: burger
+  - action: utter_burger
+- story: greet and recommend burger 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: burger
+  - action: utter_burger
+- story: recommend burger
+  steps:
+  - checkpoint: recommend
+  - intent: burger
+  - action: utter_burger
+
+- story: halal
+  steps:
+  - intent: halal
+  - action: utter_halal
+- story: greet and recommend halal 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: halal
+  - action: utter_halal
+- story: recommend halal
+  steps:
+  - checkpoint: recommend
+  - intent: halal
+  - action: utter_halal
+
+- story: chicken
+  steps:
+  - intent: chicken
+  - action: utter_chicken
+- story: greet and recommend chicken 
+  steps:
+  - checkpoint: greet_and_recommend
+  - intent: chicken
+  - action: utter_chicken
+- story: recommend chicken
+  steps:
+  - checkpoint: recommend
+  - intent: chicken
+  - action: utter_chicken
+
+
+

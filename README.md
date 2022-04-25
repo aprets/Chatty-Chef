@@ -13,14 +13,26 @@ https://github.com/gentleseal/COM3014-CW/projects/2
 
 Move your issues so everyone knows how you're doing!
 
+### 🚀 Deployments
+The latest builds of the website are deployed at:
+
+Production build (main branch) - https://chatty-chef.web.app/
+
+Dev build (dev branch) - https://chatty-chef--dev-c7y9hjpo.web.app/
+
+PR builds - Check PR comments for deployed version for that PR
+
+The latest menu dataset JSON generated dynamically from the CMS: https://europe-west2-chatty-chef.cloudfunctions.net/menu
+
 # 📁 Folder Structure
 To keep things organised, we have a folder for each service:
 
 [`chatbot`](/chatbot/) for chatbot related things
 
 [`next`](/next/) for any website work
-
 - Go to the [structure section of Next JS](/next/README.md#%EF%B8%8F-structure) to find out how our `next` app is structured.
+
+[`functions`](/functions/) for firebase functions
 
 # 📝 Committing
 

@@ -1,0 +1,198 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - see you!
+    - good bye.
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+
+- intent: hours
+  examples: |
+    - are you open
+    - do you have food
+    - what are your hours?
+    - when are you open
+    - do you deliver?
+
+- intent: recommendation
+  examples: |
+    - please suggest something new to eat.
+    - i want to try something new today
+    - do you have any recommendations?
+    - do you recommend anything?
+    - whats chef's dish
+    - i want to order some food
+    - food
+    - order
+    - feed me
+
+- intent: appetiser
+  examples: |
+    - what do you have in appetiser?
+    - do you have appetiser?
+    - appetiser
+    - starter
+    - what do you have in starter?
+    - snacks
+    - order an appetiser
+    - what do you have in snacks ?
+    - I want to eat something in snacks?
+    - I want to eat something in starter?
+    
+- intent: drink
+  examples: |
+    - i want to drink something.
+    - anything in drinks.
+    - drink options please.
+    - light drinks.
+    - soft drinks
+    - juice options please
+    - can i order a drink
+    - do you have juice here
+    
+
+- intent: dessert
+  examples: |
+    - what you have in dessert
+    - anything sweet to eat
+    - post-dinner suggestion please
+    - i want to eat sweets today
+    - what dessert should i order
+
+- intent: spicy
+  examples: |
+    - do you have anything spicy
+    - i am craving something spicy today
+    - something with spice in it ?
+    - i want to order something spicy
+
+- intent: pizza
+  examples: |
+    - what kind of pizza do you have?
+    - I want to try pizza today, options please.
+    - I am hoping for having pizza today in dinner
+    - Pizza, please ?
+    - order pizza
+
+- intent: burger
+  examples: |
+    - what kind of burgers you serve
+    - i am thinking of having something small like burger
+    - burgers
+    - any burgers i can order?
+
+- intent: chicken
+  examples: |
+    - do you have any chicken?
+    - something chicken
+    - chicken
+    - maybe some chicken
+    - i want to have chicken
+    - order chicken
+
+- intent: halal
+  examples: |
+    - Do you serve halal chicken?
+    - Do you have halal dishes ?
+    - halal chicken ?
+    - halal options please.
+    - order some halal food
+    
+- intent: checkout
+  examples: |
+    - i want to checkout, please guide
+    - i am not getting option to checkout, need help
+    - need assistance to checkout
+    - check out link please
+    - checkout 
+    - from where to checkout
+
+
+ 
+ 
