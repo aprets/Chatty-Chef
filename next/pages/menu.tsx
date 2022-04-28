@@ -5,7 +5,6 @@ import menu from '../lib/menu.preval'
 export default function MenuPage() {
 	return (
 		<>
-
 			<Image src={menu.headerPictureUrl} alt={menu.headerPictureAlt} height='15vh' />
 			<SectionNavbar sectionNames={menu.sections.map((s) => s.fields.title)} />
 			<Container size={1920} my={20}>
