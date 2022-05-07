@@ -29,20 +29,20 @@ export default function AboutUsPage() {
 					<Image height='15vh' src='https://i2-prod.dailyrecord.co.uk/incoming/article26859395.ece/ALTERNATES/s615b/0_Chef-Jimmy-Lee.jpg' alt='chef' radius='sm' />
 					<Image height='15vh' src='https://www.hitsa.com.au/wp-content/uploads/types-of-chefs.jpg' alt='chef' radius='sm' />
 				</Group>
-				<Text my={10} size='lg' color='gray'>
+				<Text my={20} size='lg' color='gray'>
 					We are a team of experienced chefs who are passionate about good food and dedicated to showcasing
 					the products of local artisans and producers from the community.
 					When we opened the restaurant almost two years ago, we knew that we would
 					draw on our individual backgrounds to make it a unique dining experience, and each of us brings with them a
 					unique perspective and passion.
 				</Text>
-				<Text my={10} size='lg' color='gray'>
+				<Text my={20} size='lg' color='gray'>
 					Chris attended the Culinary Institute of America, after which he spent eight years working in various NYC restaurants,
 					including Brasserie 8 ½ and Kiki on the Seine.
 					He&apos;s now developed the restaurant&apos;s menus, and he loves using local ingredients as much as possible.
 					In addition, Alecia was the first executive chef of Savour in Allentown, in San Francisco.
 				</Text>
-				<Text my={10} size='lg' color='gray'>
+				<Text my={20} size='lg' color='gray'>
 					Our newest chefs, Mark and Carly, are local favorites and both have experience in the culinary field.
 					Mark received a chef&apos;s certificate from the Advanced Culinary Training Program (ACTP), and Carly studied at George Washington 
 					University. Since opening, the team has strived to serve a menu that is simple yet sophisticated, with fresh, local ingredients,
