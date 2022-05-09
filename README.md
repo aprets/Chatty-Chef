@@ -18,7 +18,7 @@ The latest builds of the website are deployed at:
 
 Production build (main branch) - https://chatty-chef.web.app/
 
-Dev build (dev branch) - https://chatty-chef--dev-c7y9hjpo.web.app/
+Dev build (dev branch) - See latest release PR to main
 
 PR builds - Check PR comments for deployed version for that PR
 
