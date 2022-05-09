@@ -3,21 +3,50 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
-export interface IExampleCowPageTypeFields {
+export interface IHomePageTypeFields {
   /** Content Item Title */
   contentItemTitle: string;
 
-  /** Main Title */
-  mainTitle: string;
+  /** Header Picture */
+  headerPicture: Asset;
 
-  /** Main Top Text */
-  mainTopText: Document;
+  /** Main Heading */
+  mainHeading: string;
 
-  /** Picture */
-  picture: Asset;
+  /** Main TextBlock */
+  mainTextBlock: string;
+
+  /** Main Picture */
+  mainPicture: Asset;
+
+  /** Secondary Heading */
+  secondaryHeading: string;
+
+  /** Secondary TextBlock */
+  secondaryTextBlock: string;
+
+  /** Secondary Picture */
+  secondaryPicture: Asset;
+
+  /** Bottom Heading */
+  bottomHeading: string;
+
+  /** Bottom TextBlock */
+  bottomTextBlock: string;
+
+  /** Bottom Picture */
+  bottomPicture: Asset;
+
+  /** Sub Heading */
+  subHeading: string;
+
+  /** Picture Collection */
+  pictureCollection: Asset[];
 }
 
-export interface IExampleCowPageType extends Entry<IExampleCowPageTypeFields> {
+/** Content-type for the home page */
+
+export interface IHomePageType extends Entry<IHomePageTypeFields> {
   sys: {
     id: string;
     type: string;
@@ -26,7 +55,7 @@ export interface IExampleCowPageType extends Entry<IExampleCowPageTypeFields> {
     locale: string;
     contentType: {
       sys: {
-        id: "exampleCowPageType";
+        id: "homePageType";
         linkType: "ContentType";
         type: "Link";
       };
@@ -131,7 +160,7 @@ export interface IMenuSectionType extends Entry<IMenuSectionTypeFields> {
 }
 
 export type CONTENT_TYPE =
-  | "exampleCowPageType"
+  | "homePageType"
   | "menuItemType"
   | "menuPageType"
   | "menuSectionType";
