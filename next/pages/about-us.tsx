@@ -15,7 +15,7 @@ export default function AboutUsPage() {
 					</Stack>
 				</Group>
 				<Divider my='sm' variant='dashed' />
-				<Title order={2} >Our Story</Title>
+				<Title order={2}>Our Story</Title>
 				<Text my={10} size='lg' color='gray'>
 					Since 1989, The Chatty Chef Restaurant has been the go-to restaurant for residents of Wood Green, London.
 					Our restaurant serves meals all day, with fresh ingedients and flavorful dining options for lunch and dinner.
@@ -44,7 +44,7 @@ export default function AboutUsPage() {
 				</Text>
 				<Text my={20} size='lg' color='gray'>
 					Our newest chefs, Mark and Carly, are local favorites and both have experience in the culinary field.
-					Mark received a chef&apos;s certificate from the Advanced Culinary Training Program (ACTP), and Carly studied at George Washington 
+					Mark received a chef&apos;s certificate from the Advanced Culinary Training Program (ACTP), and Carly studied at George Washington
 					University. Since opening, the team has strived to serve a menu that is simple yet sophisticated, with fresh, local ingredients,
 					and share some fun stories about our local community and area
 				</Text>

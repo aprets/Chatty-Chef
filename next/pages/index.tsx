@@ -38,7 +38,7 @@ export default function HomePage({data}: {data: IHomePageTypeFields}) {
 		</>
 	)
 }
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
 	const pageData = await getPageDataById<IHomePageTypeFields>('7vPN3f79YeDX8R7LCEHgWS')
 	const fieldData = pageData.fields
 	return ({
